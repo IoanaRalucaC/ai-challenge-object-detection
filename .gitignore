@@ -33,10 +33,6 @@ htmlcov/
 .dmypy.json
 .ruff_cache/
 
-# Environment files (contain secrets — never commit the real ones)
-backend/.env
-backend/.env.*
-!backend/.env.example
 
 # YOLO model weights (large binary files — use Git LFS or keep local)
 backend/*.pt
@@ -60,10 +56,6 @@ frontend/.next/
 frontend/out/
 frontend/build/
 
-# Environment files (contain secrets — never commit the real ones)
-frontend/.env.local
-frontend/.env.*.local
-!frontend/.env.local.example
 
 # Lock files (keep one — remove or adjust per your package manager)
 # package-lock.json
