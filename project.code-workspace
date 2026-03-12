@@ -1,0 +1,97 @@
+{
+  "folders": [
+    {
+      "name": "backend",
+      "path": "backend"
+    },
+    {
+      "name": "frontend",
+      "path": "frontend"
+    }
+  ],
+  "settings": {
+    // ── Global ──────────────────────────────────────────────────────────
+    "editor.formatOnSave": true,
+    "editor.rulers": [88],
+    "files.trimTrailingWhitespace": true,
+
+    // ── Python (applied in the backend folder) ───────────────────────────
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.tabSize": 4
+    },
+    "python.defaultInterpreterPath": "${workspaceFolder:backend}/.venv/Scripts/python.exe",
+    "python.envFile": "${workspaceFolder:backend}/.env",
+    "python.analysis.extraPaths": ["${workspaceFolder:backend}"],
+    "python.terminal.activateEnvironment": false,
+
+    // ── JavaScript / TypeScript (applied in the frontend folder) ─────────
+    "[javascript][typescript][javascriptreact][typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2
+    },
+    "typescript.tsdk": "${workspaceFolder:frontend}/node_modules/typescript/lib",
+
+    // ── Search / file exclusions ─────────────────────────────────────────
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/.venv": true,
+      "**/__pycache__": true,
+      "**/dist": true,
+      "**/.next": true,
+      "**/*.pt": true
+    },
+    "files.watcherExclude": {
+      "**/node_modules/**": true,
+      "**/.venv/**": true,
+      "**/__pycache__/**": true
+    }
+  },
+  // "extensions": {
+  //   "recommendations": [
+  //     // Python
+  //     "ms-python.python",
+  //     "ms-python.black-formatter",
+  //     "ms-python.pylint",
+  //     // Frontend
+  //     "esbenp.prettier-vscode",
+  //     "dbaeumer.vscode-eslint",
+  //     "Vue.volar",
+  //     // General
+  //     "mikestead.dotenv",
+  //     "eamodio.gitlens"
+  //   ]
+  // },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "FastAPI: uvicorn",
+        "type": "debugpy",
+        "request": "launch",
+        "module": "uvicorn",
+        "args": ["main:app", "--host", "0.0.0.0", "--port", "8000"],
+        "cwd": "${workspaceFolder:backend}",
+        "envFile": "${workspaceFolder:backend}/.env",
+        "python": "${workspaceFolder:backend}/.venv/Scripts/python.exe",
+        "jinja": true,
+        "justMyCode": true
+      },
+      {
+        "name": "Frontend: dev server",
+        "type": "node-terminal",
+        "request": "launch",
+        "command": "npm run dev",
+        "cwd": "${workspaceFolder:frontend}",
+        "envFile": "${workspaceFolder:frontend}/.env.local"
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Full Stack",
+        "configurations": ["FastAPI: uvicorn", "Frontend: dev server"],
+        "stopAll": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+ultralytics
+opencv-python
+sahi
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+debugpy
