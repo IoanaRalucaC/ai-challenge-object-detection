@@ -40,3 +40,7 @@ This project is a full-stack application for running object detection on uploade
 For complete installation and run instructions, see:
 
 - [install.md](./install.md)
+
+## Additional Documentation
+
+- [The Learning Journal: My 48-Hour Journey](./LEARNING_JOURNAL.md)
