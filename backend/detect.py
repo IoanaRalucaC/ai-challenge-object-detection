@@ -1,5 +1,5 @@
 """
-Advanced Object Detector — YOLOv8 + SAHI inference pipeline.
+Advanced Object Detector — YOLOv8 + SAHI inference pipeline - standalone script.
 Detects Dog, Cat, and Person with maximized accuracy using two complementary pipelines:
 
   Pipeline 1 — Full-image, high-resolution YOLOv8 inference with Test Time Augmentation.

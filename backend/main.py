@@ -39,7 +39,7 @@ BOX_COLORS = {
 
 
 # ─── Model Configuration ─────────────────────────────────────────────────────────
-MODEL_PATH = os.getenv("MODEL_PATH", "yolo11s.pt")
+MODEL_PATH = os.getenv("MODEL_PATH", "yolov8m.pt")
 
 
 # ─── Pipeline 1 Parameters ───────────────────────────────────────────────────────
